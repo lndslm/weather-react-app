@@ -1,38 +1,89 @@
-.App {
+h2 {
+  font-size: 40px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 30px;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 600px;
+}
+
+.weather-datas {
+  font-size: 14px;
+  padding: 10px 0;
+  margin-top: 30px;
+}
+
+.sky {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.date {
+  font-size: 14px;
+  margin: 0;
+}
+
+.btn {
+  margin-top: 10px;
+  font-size: 22px;
+  display: inline;
+  padding: 5px 5px 10px 5px;
+}
+
+.Forecast {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.current-datas {
+  margin-top: 10px;
+}
+
+.card {
+  background: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
+}
+
+.city-name {
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-radius: 0.375rem;
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  background: #fafafa;
+}
+
+.current-temperature {
+  font-weight: bold;
+  font-size: 34px;
+}
+
+.code-link {
+  font-size: 13px;
+  margin-top: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.units {
+  position: relative;
+  font-size: 20px;
+  top: -12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-forecast-temperature {
+  font-size: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-forecast-temperature-max {
+  font-weight: 500;
 }
