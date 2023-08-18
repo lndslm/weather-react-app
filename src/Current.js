@@ -1,8 +1,9 @@
 import React from "react";
+import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-/*import "./Current.css";*/
-
-export default function Search() {
+export default function Current() {
   let weatherData = {
     city: "Honolulu",
     date: "Friday 12:12 PM",
@@ -14,18 +15,19 @@ export default function Search() {
   };
   return (
     <div className="Current">
-      <div className="card current-datas">
-        <div className="card-body">
-          <div className="row">
-            <div className="col-8">
+      <Card className="card current-datas">
+        <Card.Body className="card-body">
+          {" "}
+          <Row className="row">
+            <Col className="col-8">
               <h1>{weatherData.city}</h1>
               <p className="date">{weatherData.date}</p>
               <h2>
                 <img src={weatherData.imgURL} alt={weatherData.description} />
                 <span className="sky">{weatherData.description}</span>
               </h2>
-            </div>
-            <div className="col-4">
+            </Col>
+            <Col className="col-4">
               <h3>
                 <span className="current-temperature">
                   {weatherData.temperature}
@@ -39,10 +41,10 @@ export default function Search() {
                 <br />
                 humidity : {weatherData.humidity}%
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
-
-/*import "./Search.css";*/
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export default function Search() {
   return (
@@ -20,10 +21,10 @@ export default function Search() {
               </div>
               <div className="col-2">
                 <button type="button" className="btn">
-                  <i className="fa-solid fa-magnifying-glass"></i>
+                  <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
                 <button type="button" className="btn">
-                  <i className="fa-solid fa-location-dot"></i>
+                  <FontAwesomeIcon icon={faLocationDot} />
                 </button>
               </div>
             </div>
