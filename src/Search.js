@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export default function Search() {
+  let [city, setCity] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    return city;
+  }
+
+  function updateCity(event) {
+    setCity(event.target.value);
+  }
+
   return (
     <div className="Search">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="search-engine">
           <div className="card-body">
             <div className="row">
@@ -17,6 +28,7 @@ export default function Search() {
                   className="city-name"
                   placeholder="Enter city name"
                   autoComplete="off"
+                  onChange={updateCity}
                 />
               </div>
               <div className="col-2">
