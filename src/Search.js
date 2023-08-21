@@ -55,7 +55,7 @@ export default function Search(props) {
                   />
                 </div>
                 <div className="col-2">
-                  <button type="button" className="btn">
+                  <button type="button" className="btn" onClick={handleSubmit}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                   </button>
                   <button type="button" className="btn">
