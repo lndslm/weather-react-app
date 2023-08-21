@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Current() {
   let [weatherData, setWeatherData] = useState({ ready: false });
@@ -63,38 +60,7 @@ export default function Current() {
             </div>
           </div>
         </form>
-        <Card className="card current-datas">
-          <Card.Body className="card-body">
-            {" "}
-            <Row className="row">
-              <Col className="col-8">
-                <h1>{weatherData.city}</h1>
-                <p className="date">
-                  <FormattedDate date={weatherData.date} />
-                </p>
-                <h2>
-                  <img src={iconImage} alt={weatherData.description} />
-                  <span className="sky">{weatherData.description}</span>
-                </h2>
-              </Col>
-              <Col className="col-4">
-                <h3>
-                  <span className="current-temperature">
-                    {Math.round(weatherData.temperature)}
-                  </span>
-                  <span className="units">
-                    <small>°C | F</small>
-                  </span>
-                </h3>
-                <p className="weather-datas">
-                  wind : {weatherData.wind} km/h
-                  <br />
-                  humidity : {weatherData.humidity}%
-                </p>
-              </Col>
-            </Row>
-          </Card.Body>
-        </Card>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
