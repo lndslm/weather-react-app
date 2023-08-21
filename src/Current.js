@@ -6,6 +6,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import FormattedDate from "./FormattedDate";
 
 export default function Current() {
   let [weatherData, setWeatherData] = useState({ ready: false });
@@ -24,7 +25,7 @@ export default function Current() {
     setWeatherData({
       ready: true,
       city: response.data.name,
-      date: "Friday 12:12PM",
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -68,7 +69,9 @@ export default function Current() {
             <Row className="row">
               <Col className="col-8">
                 <h1>{weatherData.city}</h1>
-                <p className="date">{weatherData.date}</p>
+                <p className="date">
+                  <FormattedDate date={weatherData.date} />
+                </p>
                 <h2>
                   <img src={iconImage} alt={weatherData.description} />
                   <span className="sky">{weatherData.description}</span>
