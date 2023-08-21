@@ -5,18 +5,9 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import WeatherInfo from "./WeatherInfo";
 
-export default function Current() {
-  let [weatherData, setWeatherData] = useState({ ready: false });
-  let iconImage = `https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`;
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    setReady(true);
-  }
-
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
+export default function Search(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function displayWeatherData(response) {
     setWeatherData({
@@ -31,9 +22,24 @@ export default function Current() {
     });
   }
 
+  function searchCity() {
+    let apiKey = `86a9ba8a3f6c64c4f7dcbf5d435a1c77`;
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiURL).then(displayWeatherData);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    searchCity();
+  }
+
+  function updateCity(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
-      <div className="Current">
+      <div className="Search">
         <form onSubmit={handleSubmit}>
           <div className="search-engine">
             <div className="card-body">
@@ -64,10 +70,7 @@ export default function Current() {
       </div>
     );
   } else {
-    let apiKey = `86a9ba8a3f6c64c4f7dcbf5d435a1c77`;
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${weatherData.city}&appid=${apiKey}&units=metric`;
-    axios.get(apiURL).then(displayWeatherData);
-
+    searchCity();
     return "loading...";
   }
 }

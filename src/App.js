@@ -1,5 +1,5 @@
 import React from "react";
-import Current from "./Current";
+import Search from "./Search";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Current />
+        <Search defaultCity="Honolulu" />
         <Forecast />
         <Footer />
       </div>

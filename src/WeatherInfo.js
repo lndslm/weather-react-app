@@ -12,28 +12,28 @@ export default function weatherInfo(props) {
           {" "}
           <Row className="row">
             <Col className="col-8">
-              <h1>{props.city.city}</h1>
+              <h1>{props.data.city}</h1>
               <p className="date">
-                <FormattedDate date={props.city.date} />
+                <FormattedDate date={props.data.date} />
               </p>
               <h2>
-                <img src={iconImage} alt={props.city.description} />
-                <span className="sky">{props.city.description}</span>
+                <img src="" alt={props.data.description} />
+                <span className="sky">{props.data.description}</span>
               </h2>
             </Col>
             <Col className="col-4">
               <h3>
                 <span className="current-temperature">
-                  {Math.round(props.city.temperature)}
+                  {Math.round(props.data.temperature)}
                 </span>
                 <span className="units">
                   <small>°C | F</small>
                 </span>
               </h3>
               <p className="weather-datas">
-                wind : {props.city.wind} km/h
+                wind : {props.data.wind} km/h
                 <br />
-                humidity : {props.city.humidity}%
+                humidity : {props.data.humidity}%
               </p>
             </Col>
           </Row>
