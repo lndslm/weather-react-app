@@ -13,6 +13,11 @@ a {
   text-decoration: none;
 }
 
+canvas {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
 .container {
   max-width: 600px;
 }
@@ -21,11 +26,14 @@ a {
   font-size: 14px;
   padding: 10px 0;
   margin-top: 30px;
+  margin-bottom: 0;
 }
 
 .sky {
   font-size: 14px;
   font-weight: normal;
+  position: relative;
+  top: -15px;
 }
 
 .date {
