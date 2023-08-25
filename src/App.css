@@ -1,68 +1,69 @@
-h2 {
+.container {
+  max-width: 600px;
+}
+
+.Weather h2 {
   font-size: 40px;
   margin: 0;
 }
 
-h3 {
+.Weather h3 {
   font-size: 30px;
   text-decoration: none;
   padding: 10px 0;
 }
 
-a {
+.Weather a {
   text-decoration: none;
 }
 
-canvas {
+.Weather canvas {
   margin-top: 20px;
   margin-right: 20px;
 }
 
-.container {
-  max-width: 600px;
-}
-
-.weather-datas {
+.Weather .weather-datas {
   font-size: 14px;
   padding: 10px 0;
   margin-top: 30px;
   margin-bottom: 0;
 }
 
-.sky {
+.Weather .sky {
   font-size: 14px;
   font-weight: normal;
   position: relative;
   top: -15px;
 }
 
-.date {
+.Weather .date {
   font-size: 14px;
   margin: 0;
 }
 
-.btn {
+.Weather .current-datas {
+  margin-top: 10px;
+}
+
+.Weather .current-temperature {
+  font-weight: bold;
+  font-size: 34px;
+}
+
+.Weather .units {
+  position: relative;
+  font-size: 20px;
+  top: -12px;
+}
+
+.Search .btn {
   margin-top: 10px;
   font-size: 22px;
   display: inline;
   padding: 5px 5px 10px 5px;
 }
 
-.Forecast {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 16px;
-}
-
-.current-datas {
-  margin-top: 10px;
-}
-
-.card {
-  background: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
-}
-
-.city-name {
+.Search .city-name {
   border: 1px solid rgba(0, 0, 0, 0.175);
   border-radius: 0.375rem;
   margin-top: 10px;
@@ -71,21 +72,20 @@ canvas {
   background: #fafafa;
 }
 
-.current-temperature {
-  font-weight: bold;
-  font-size: 34px;
+.Forecast {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.card {
+  background: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
 }
 
 .code-link {
   font-size: 13px;
   margin-top: 10px;
   text-align: center;
-}
-
-.units {
-  position: relative;
-  font-size: 20px;
-  top: -12px;
 }
 
 .weather-forecast-temperature {

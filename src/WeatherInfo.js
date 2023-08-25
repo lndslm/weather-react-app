@@ -4,10 +4,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function weatherInfo(props) {
   return (
-    <div>
+    <div className="Weather">
       <Card className="card current-datas">
         <Card.Body className="card-body">
           {" "}
@@ -23,14 +24,7 @@ export default function weatherInfo(props) {
               </h2>
             </Col>
             <Col className="col-4">
-              <h3>
-                <span className="current-temperature">
-                  {Math.round(props.data.temperature)}
-                </span>
-                <span className="units">
-                  <small>°C | F</small>
-                </span>
-              </h3>
+              <WeatherTemperature celsius={props.data.temperature} />
               <p className="weather-datas">
                 wind : {props.data.wind} km/h
                 <br />
