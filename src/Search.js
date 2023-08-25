@@ -24,7 +24,8 @@ export default function Search(props) {
 
   function searchCity() {
     let apiKey = `86a9ba8a3f6c64c4f7dcbf5d435a1c77`;
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let units = "metric";
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiURL).then(displayWeatherData);
   }
 
@@ -35,6 +36,21 @@ export default function Search(props) {
 
   function updateCity(event) {
     setCity(event.target.value);
+  }
+
+  function showPosition(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiKey = "86a9ba8a3f6c64c4f7dcbf5d435a1c77";
+    let units = "metric";
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}
+&lon=${longitude}&appid=${apiKey}&units=${units}`;
+    axios.get(apiURL).then(displayWeatherData);
+  }
+
+  function getPosition(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(showPosition);
   }
 
   if (weatherData.ready) {
@@ -58,7 +74,7 @@ export default function Search(props) {
                   <button type="button" className="btn" onClick={handleSubmit}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                   </button>
-                  <button type="button" className="btn">
+                  <button type="button" className="btn" onClick={getPosition}>
                     <FontAwesomeIcon icon={faLocationDot} />
                   </button>
                 </div>
@@ -71,6 +87,6 @@ export default function Search(props) {
     );
   } else {
     searchCity();
-    return "loading...";
+    return "Loading...";
   }
 }
