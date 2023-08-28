@@ -1,6 +1,5 @@
 import React from "react";
 import Search from "./Search";
-import Forecast from "./Forecast";
 import Footer from "./Footer";
 
 import "./App.css";
@@ -10,7 +9,6 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Search defaultCity="Honolulu" />
-        <Forecast />
         <Footer />
       </div>
     </div>

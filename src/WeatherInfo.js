@@ -19,7 +19,11 @@ export default function weatherInfo(props) {
                 <FormattedDate date={props.data.date} />
               </p>
               <h2>
-                <WeatherIcon code={props.data.icon} className="weatherIcon" />
+                <WeatherIcon
+                  code={props.data.icon}
+                  size={54}
+                  className="weatherIcon"
+                />
                 <span className="sky">{props.data.description}</span>
               </h2>
             </Col>
