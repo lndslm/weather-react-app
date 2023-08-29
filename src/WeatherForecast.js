@@ -21,9 +21,15 @@ export default function WeatherForecast(props) {
         <Card className="card">
           <Card.Body className="card-body">
             <Row className="row">
-              <Col className="col">
-                <WeatherForecastDay data={forecast[0]} />
-              </Col>
+              {forecast.map(function(dailyForecast, index) {
+                if (index < 5) {
+                  return (
+                    <Col className="col" key={index}>
+                      <WeatherForecastDay data={dailyForecast} />
+                    </Col>
+                  );
+                }
+              })}
             </Row>
           </Card.Body>
         </Card>
