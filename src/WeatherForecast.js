@@ -32,7 +32,7 @@ export default function WeatherForecast(props) {
                     </Col>
                   );
                 } else {
-                  return [];
+                  return null;
                 }
               })}
             </Row>
